@@ -30,10 +30,13 @@ public class GameManager : MonoBehaviour
     public Transform CoinIcon;
     public Text GoldInfo;
     public Text AutoCollectInfo;
+    public Text TapCountInfo;
+    public AudioSource CoinTapSound;
     private List<ResourceController> _activeResources = new List<ResourceController>();
     private List<TapText> _tapTextPool = new List<TapText>();
     private float _collectSecond;
     private double _totalGold;
+    private int _totalTap = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -78,12 +81,14 @@ public class GameManager : MonoBehaviour
     }
     public void CollectByTap(Vector3 tapPosition, Transform parent)
     {
+        CoinTapSound.Play();
+        HitController.Instance.IncrementHit();
         double output = 0;
         foreach (ResourceController resource in _activeResources)
         {
             if (resource.IsUnlocked)
             {
-                output += resource.GetOutput();
+                output += resource.GetOutput() * HitController.Instance.RankBonus();
             }
         }
         TapText tapText = GetOrCreateTapText();
@@ -174,7 +179,6 @@ public class GameManager : MonoBehaviour
             return _totalGold;
         }
     }
-
 }
 
 

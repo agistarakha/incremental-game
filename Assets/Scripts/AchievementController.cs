@@ -80,7 +80,5 @@ public class AchievementData
 
 public enum AchievementType
 {
-
     UnlockResource
-
 }
