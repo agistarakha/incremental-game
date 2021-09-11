@@ -14,3 +14,4 @@ Rodi	: Jumlah Hit 50-99
 Romusha : Jumlah Hit lebih dari 100  
 
 ### Suara Koin
+### Catatan : Mohon maaf karena terdapat beberapa akun yang digunakan untuk push tidak sama dengan akun pemilik repository. Hal tersebut dikarenakan saya lupa mengganti akun pada command line.
