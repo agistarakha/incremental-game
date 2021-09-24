@@ -18,3 +18,4 @@ Romusha : Jumlah Hit lebih dari 100 Warna koin menjadi merah dan tulisan Rank Me
 
 Halooo
 Misal ini tambah fitur.... dan save close
+Misal ini fitur baru yang ditambah.
